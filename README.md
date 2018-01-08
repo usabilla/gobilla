@@ -1,3 +1,6 @@
+⚠️ _**DEPRECATION WARNING**: This is an old version of the Go client for the Usabilla API. It is adviced to use [the most recent version](https://github.com/usabilla/api-go)_
+
+
 # Gobilla
 
 Gobilla is a Go client for [Usabilla API](https://usabilla.com/api).
@@ -25,13 +28,13 @@ func main() {
 
     // Pass the key and secret which should be defined as ENV vars
     gb := gobilla.New(key, secret)
-    
+
     b := gb.Buttons()
 
     // Get the first ten buttons
     params := map[string]string{"limit": "10"}
     buttons, _ := b.Get(params)
-    
+
     // Print all feedback items for each button
     for _, button := range buttons.Items {
         feedback, _ := b.Feedback().Get(button.ID, nil)
@@ -46,7 +49,7 @@ Then install Gobilla package
 
 Run the file
 
-    go run main.go 
+    go run main.go
 
 And you will get all feedback items for each button.
 
